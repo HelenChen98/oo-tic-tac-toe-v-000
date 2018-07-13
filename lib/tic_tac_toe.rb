@@ -23,9 +23,9 @@ WIN_COMBINATIONS = [
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
-  
+
   # input_index
-  
+
   def input_to_index(user_input)
     user_input.to_i - 1
   end
@@ -33,7 +33,7 @@ WIN_COMBINATIONS = [
   def move(position, char)
     @board[position] = char
   end
-  
+
 # For #move to work, we need to position_taken and valid_move
   def position_taken?(index_i)
     ((@board[index_i] == "X") || (@board[index_i] == "O"))
@@ -53,17 +53,18 @@ WIN_COMBINATIONS = [
     end
     return number_of_turns
   end
-  
+
 #current_player
   def current_player
     if turn_count % 2 == 0
-    "X"
+      return "X"
     else
-    "O"
+      return "O"
+    end
   end
- 
-#turn 
-def turn
+
+#turn
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -74,7 +75,7 @@ def turn
     else
       turn
     end
-end
+  end
 
 #won?
 def won?
@@ -115,7 +116,6 @@ def winner
     end
   end
 end
-end
 
 #play
 def play
@@ -130,5 +130,3 @@ def play
 end
 
 end
-
-  
